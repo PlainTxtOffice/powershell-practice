@@ -1,5 +1,5 @@
 ---
-last_updated: 2026-11-21
+last_updated: 2026-11-22
 ---
 
 <!-- Authoring guidance: dev-docs/specs/README_SPEC.instructions.md -->
@@ -11,14 +11,15 @@ last_updated: 2026-11-21
 <h1 align="center">PowerShell Practice</h1>
 
 <p align="center">
-  An app that helps PowerShell beginners learn everyday cmdlets and test
-  themselves with quick quizzes.
+  An app for Android, iPhone, and iPad that helps PowerShell beginners learn
+  everyday cmdlets and test themselves with quick quizzes.
 </p>
 
 <p align="center">
   <a href="https://play.google.com/store/apps/details?id=com.plaintxtoffice.powershellpractice"><img src="https://img.shields.io/badge/release-Google%20Play-blue" alt="Android release: Google Play"></a>
+  <a href="https://apps.apple.com/app/id6837567736"><img src="https://img.shields.io/badge/release-App%20Store-blue" alt="iOS release: App Store"></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/license-Proprietary-informational" alt="License: Proprietary"></a>
-  <a href="docs/USER_MANUAL.md"><img src="https://img.shields.io/badge/platform-Android-3DDC84" alt="Platform: Android"></a>
+  <a href="docs/USER_MANUAL.md"><img src="https://img.shields.io/badge/platform-Android%20%7C%20iOS-3DDC84" alt="Platforms: Android and iOS"></a>
 </p>
 <!-- rumdl-enable MD033 MD041 -->
 
@@ -31,9 +32,10 @@ syntax takes practice. PowerShell Practice gives you a pocket reference of
 common cmdlets, from getting help and working with files to the pipeline,
 processes, output, and networking, along with quizzes that check what you
 remember. Everything works on your device, with no account and no PowerShell
-connection needed. The app runs on Android phones and tablets and is free on
-[Google Play](https://play.google.com/store/apps/details?id=com.plaintxtoffice.powershellpractice);
-a version for iPhone and iPad is in development.
+connection needed. The app runs on Android phones and tablets and on iPhone
+and iPad, and is free on
+[Google Play](https://play.google.com/store/apps/details?id=com.plaintxtoffice.powershellpractice)
+and the [App Store](https://apps.apple.com/app/id6837567736).
 
 ## Features
 
@@ -49,12 +51,36 @@ a version for iPhone and iPad is in development.
   tapping cmdlets into order.
 - Track quiz accuracy, with a **Needs Review** list of the cmdlets you miss
   most.
+- Read five short guides in the **Docs** tab, on naming rules, command
+  conventions, piping techniques, variables and quoting, and comparison
+  operators, each with worked examples and their output.
+- Type examples into the **Practice Terminal** to see their recorded output.
+  Nothing you type is run.
+- Send a bug report or feature request from inside the app.
 - Reset all progress when you want to start over.
+
+## Download
+
+| Platform | Download | Notes |
+| --- | --- | --- |
+| Android | [Google Play](https://play.google.com/store/apps/details?id=com.plaintxtoffice.powershellpractice) | Free. Version 1.1.0. Requires Android 8.0 or later. |
+| iOS | [App Store](https://apps.apple.com/app/id6837567736) | Free. Version 1.0.0; 1.1.0, with the guides and the practice terminal, is waiting for App Review. Requires iOS 26.5 or later on iPhone or iPad. |
 
 ## User Manual
 
 See the [User Manual](docs/USER_MANUAL.md) for installation, setup, usage, and
 troubleshooting.
+
+## Feedback
+
+Send bug reports and feature requests to
+[support@plaintxtoffice.com](mailto:support@plaintxtoffice.com), through the
+[contact page](https://plaintxtoffice.com/contact/), or in
+[GitHub Issues](https://github.com/PlainTxtOffice/powershell-practice/issues).
+In the app, **Send feedback** prepares an email to the same address. On
+Android, find it in **More options** (three dots) on any tab or under
+**About** in **Docs**. On iPhone and iPad, it is under **About** in **Docs**
+from version 1.1.0, and on the **Learn** tab's toolbar in version 1.0.0.
 
 ## License
 

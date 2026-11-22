@@ -1,9 +1,9 @@
 ---
-last_updated: 2026-11-20
-version: 5.4.0
+last_updated: 2026-11-22
+version: 5.6.0
 product_versions:
-  ios: "1.0.0"
-  android: "1.0.0"
+  ios: "1.1.0"
+  android: "1.1.0"
 generated_from: "dev-docs/specs/USER_MANUAL_SPEC.instructions.md"
 ---
 
@@ -23,8 +23,8 @@ progress.
 | Item | Details |
 | --- | --- |
 | Platform | Android, on phones and tablets; iOS, on iPhone and iPad |
-| Interface | Touch interface with three tabs: **Learn**, **Practice**, and **Progress** |
-| Version | 1.0.0 |
+| Interface | Touch interface with four tabs: **Learn**, **Practice**, **Progress**, and **Docs** |
+| Version | Android 1.1.0, iOS 1.1.0. The App Store has iOS 1.0.0; 1.1.0 is waiting for App Review |
 
 <!-- Verified from: platform/ios/powershell-practice.xcodeproj/project.pbxproj [MARKETING_VERSION, TARGETED_DEVICE_FAMILY, INFOPLIST_KEY_CFBundleDisplayName] -->
 <!-- Verified from: platform/ios/powershell-practice/ContentView.swift [ContentView] -->
@@ -61,11 +61,12 @@ It is free and needs no account.
 
 ### Install on iOS
 
-Installation source: Unknown. No App Store listing, TestFlight invitation, or
-other public download for PowerShell Practice has been published or verified
-for this version.
+Install PowerShell Practice on your iPhone or iPad from the
+[App Store](https://apps.apple.com/app/id6837567736). It is free and needs no
+account. The App Store has version 1.0.0; version 1.1.0, described in this
+manual, is waiting for App Review.
 
-<!-- Verified from: docs/PRIVACY.md [publication draft] -->
+<!-- Verified from: platform/ios/powershell-practice.xcodeproj/project.pbxproj [PRODUCT_BUNDLE_IDENTIFIER, MARKETING_VERSION] -->
 
 ### Set Up the App
 
@@ -101,16 +102,18 @@ as you go.
 
 ## Getting Around
 
-The app has three tabs at the bottom of the screen.
+The app has four tabs. On Android, wider windows may show them along the side.
 
 | Tab | What you find there |
 | --- | --- |
-| **Learn** | The cmdlet library, grouped by category, with a search field and the **Privacy** button |
-| **Practice** | Quiz options and the **Start Quiz** button |
+| **Learn** | The cmdlet library, grouped by category, with a search field |
+| **Practice** | Quiz options, the **Start Quiz** button, pipeline practice, and the **Practice Terminal** |
 | **Progress** | Your learned count, quiz accuracy, progress by category, commands that need review, and **Reset All Progress** |
+| **Docs** | Guides to PowerShell conventions, and an **About** section with **Privacy**, **Send Feedback**, and the app version |
 
 <!-- Verified from: platform/ios/powershell-practice/ContentView.swift [ContentView] -->
 <!-- Verified from: platform/ios/powershell-practice/Views/LearnView.swift [LearnView] -->
+<!-- Verified from: platform/ios/powershell-practice/Views/DocsView.swift [DocsView] -->
 <!-- Verified from: platform/ios/powershell-practice/Views/PracticeView.swift [PracticeView] -->
 <!-- Verified from: platform/ios/powershell-practice/Views/StatsView.swift [StatsView] -->
 
@@ -129,10 +132,10 @@ The library uses these categories:
 <!-- Verified from: platform/ios/powershell-practice/Models/Command.swift [CommandCategory.blurb] -->
 
 Tap a cmdlet to open its detail screen. Use the back button at the top left to
-return to the list. The app has no separate help screen; the **Privacy**
-screen explains how the app handles your data.
+return to the list. The guides in **Docs** explain PowerShell conventions, and
+the **Privacy** screen there explains how the app handles your data.
 
-<!-- Verified from: platform/ios/powershell-practice/Views/LearnView.swift [navigationDestination, toolbar] -->
+<!-- Verified from: platform/ios/powershell-practice/Views/LearnView.swift [navigationDestination] -->
 
 ## Everyday Tasks
 
@@ -158,12 +161,14 @@ The detail screen for a cmdlet shows:
 - A short summary of what it does.
 - **Syntax**, showing its common parameters.
 - **Aliases**, when the cmdlet has any.
-- **Examples**, each with an explanation.
+- **Examples**, each with an explanation and its **Output**: what
+  PowerShell prints when you run it, or a note that it prints nothing. The
+  output is a recorded sample; the app never runs commands.
 - A tip, for some cmdlets.
 - **Quiz record: X of Y correct**, after you have answered quiz questions
   about it.
 
-<!-- Verified from: platform/ios/powershell-practice/Views/CommandDetailView.swift [CommandDetailView.body, header] -->
+<!-- Verified from: platform/ios/powershell-practice/Views/CommandDetailView.swift [CommandDetailView.body, header, ExampleView, ExampleOutput] -->
 
 ### Copy a Command
 
@@ -303,6 +308,39 @@ list. To leave early, tap **Close** on Android or **End Practice** on iPhone.
 <!-- Verified from: platform/android/app/src/main/kotlin/com/plaintxtoffice/powershellpractice/feature/pipeline/PipelineScreen.kt [PipelineBuilder, PipelineFeedback, PipelineResults] -->
 <!-- Verified from: platform/ios/powershell-practice/Views/PipelineView.swift [builder, feedback, PipelineSummary] -->
 
+### Use the Practice Terminal
+
+The practice terminal lets you type commands as you would at a
+PowerShell prompt and see what they print. It knows the examples from the cmdlet
+pages and the guides, and it never runs anything.
+
+1. Tap the **Practice** tab, then **Practice Terminal**.
+1. Type an example, such as `Get-Location`, and tap **Run** or use the keyboard
+   submit key.
+1. Read the output under your command. Like PowerShell, the terminal ignores
+   capitalization and extra spaces.
+
+If you type a cmdlet or alias the terminal knows but an example it doesn't, it
+lists that cmdlet's examples; tap one to fill it in. **Try an Example** fills in
+a random example. Use **Clear Screen**, `cls`, or `Clear-Host` to clear the
+history. You can paste a command with its prompt, such as
+`PS C:\Users\alex> Get-Location`.
+
+<!-- Verified from: platform/ios/powershell-practice/Views/TerminalView.swift [TerminalView] -->
+<!-- Verified from: platform/ios/powershell-practice/Models/PracticeTerminal.swift [PracticeTerminal.reply] -->
+
+### Read the Guides
+
+The **Docs** tab has five short guides: **Naming Rules**, **Command
+Conventions**, **Piping Techniques**, **Variables and Quoting**, and
+**Comparison Operators**. **Naming Rules** covers the Verb-Noun pattern,
+approved verbs, singular nouns, capitalization, parameter names and aliases,
+and how to name your own functions. Each guide has worked examples with their
+output. Tap **Copy** beside a command to paste it into the practice terminal.
+
+<!-- Verified from: platform/ios/powershell-practice/Models/GuideLibrary.swift [GuideLibrary.all] -->
+<!-- Verified from: platform/ios/powershell-practice/Views/DocsView.swift [GuideView] -->
+
 ### Check Your Progress
 
 Tap the **Progress** tab to see:
@@ -333,11 +371,12 @@ the app shows **Couldn't reset progress** and leaves your progress unchanged.
 
 ### Read the Privacy Information
 
-1. Tap the **Learn** tab.
-1. Tap **Privacy** at the top right.
+1. Tap the **Docs** tab.
+1. In the **About** section, tap **Privacy**.
 1. Read the privacy information. It is available without a network
    connection.
-1. To contact the developer, tap **Contact Plain Text Office**. This opens the
+1. Names of buttons appear in bold. At the end, tap **Send Feedback** to open
+   the feedback screen, or **Contact Plain Text Office** to open the
    developer's website.
 
 The screen ends with an **About** note: PowerShell is a trademark of Microsoft
@@ -346,6 +385,37 @@ Office LLC that is not affiliated with or endorsed by Microsoft. It also says
 that the commands and aliases are for PowerShell 7 on Windows.
 
 <!-- Verified from: platform/ios/powershell-practice/PrivacyPolicyView.swift [PrivacyPolicyButton, PrivacyPolicyView, About] -->
+
+### Send Feedback
+
+Use **Send Feedback** to report a bug or ask for a feature.
+
+1. Tap the **Docs** tab, and in the **About** section tap **Send Feedback**.
+   On Android, you can also tap **More options** (three dots) on any tab and
+   then **Send feedback**. In iOS version 1.0.0, **Send Feedback** is on the
+   **Learn** tab's toolbar.
+1. On iPhone and iPad, tap **Report a bug** or **Request a feature** to open a
+   draft in your email app, or **Open contact form** to open the contact page
+   in your browser.
+1. On Android, choose **Bug report** or **Feature request**, describe it in
+   **Details**, and tap **Send by email**, or tap **Use the contact page
+   instead**.
+1. Review the draft and send it from your email app.
+
+The draft is addressed to `support@plaintxtoffice.com` and includes the app
+version, the iOS or Android version, and the device model. It never includes
+your learned cmdlets, quiz answers, or progress. Nothing is sent unless you
+send it.
+
+You can also email
+[support@plaintxtoffice.com](mailto:support@plaintxtoffice.com) directly, use
+the [contact page](https://plaintxtoffice.com/contact/), or open an issue in
+[GitHub Issues](https://github.com/PlainTxtOffice/powershell-practice/issues).
+
+<!-- Verified from: platform/ios/powershell-practice/Feedback.swift [Feedback, FeedbackView] -->
+<!-- Verified from: platform/android/app/src/main/kotlin/com/plaintxtoffice/powershellpractice/feature/feedback/FeedbackScreen.kt [FeedbackScreen] -->
+<!-- Verified from: platform/android/app/src/main/kotlin/com/plaintxtoffice/powershellpractice/feature/home/HomeScreen.kt [HomeMenu] -->
+<!-- Verified from: platform/android/app/src/main/kotlin/com/plaintxtoffice/powershellpractice/feature/docs/DocsScreen.kt [DocsScreen] -->
 
 ## Settings and Preferences
 
@@ -364,10 +434,12 @@ perform its main actions.
 
 | Control | Where | What it does |
 | --- | --- | --- |
-| **Learn**, **Practice**, **Progress** | Tab bar | Switch between the main screens |
+| **Learn**, **Practice**, **Progress**, and **Docs** | Tab bar | Switch between the main screens |
 | Search field | **Learn** | Filters cmdlets by name, alias, or description |
-| **Privacy** | **Learn**, top right | Opens the privacy information |
-| **Copy** | Cmdlet detail | Copies the syntax or an example to the clipboard |
+| **Privacy** | **Docs**, **About** section | Opens the privacy information |
+| **Send Feedback** | **Docs**, **About** section, or the end of **Privacy** | Opens the feedback screen |
+| **Practice Terminal** | **Practice** | Opens the practice terminal |
+| **Copy** | Cmdlet detail or a guide | Copies the syntax or an example to the clipboard |
 | **Mark as Learned** / **Learned** | Cmdlet detail | Marks or unmarks the cmdlet as learned |
 | **Start Quiz** | **Practice** | Starts a quiz with the chosen options |
 | **Check** | Quiz, **Type the Command** | Checks your typed answer |
@@ -376,7 +448,8 @@ perform its main actions.
 | **Reset All Progress** | **Progress** | Clears learned commands and quiz history after confirmation |
 
 <!-- Verified from: platform/ios/powershell-practice/ContentView.swift [ContentView] -->
-<!-- Verified from: platform/ios/powershell-practice/Views/LearnView.swift [searchable, toolbar] -->
+<!-- Verified from: platform/ios/powershell-practice/Views/LearnView.swift [searchable] -->
+<!-- Verified from: platform/ios/powershell-practice/Views/DocsView.swift [DocsView] -->
 <!-- Verified from: platform/ios/powershell-practice/Views/CommandDetailView.swift [CodeBlock, learnedButton] -->
 <!-- Verified from: platform/ios/powershell-practice/Views/PracticeView.swift [Start Quiz] -->
 <!-- Verified from: platform/ios/powershell-practice/Views/QuizView.swift [typedInput, toolbar, safeAreaInset] -->
@@ -397,9 +470,12 @@ open or edit these records by hand, and the app does not show their location.
 <!-- Verified from: docs/PRIVACY.md [On your device] -->
 
 To remove your records, use **Reset All Progress** or delete the app. Device
-backups may keep earlier copies. The app has no user-visible log files.
+backups may keep earlier copies. On iPhone and iPad, iCloud Backup and
+computer backups can include the app's data; on Android, Android backup and
+device transfer can include it. The app has no user-visible log files.
 
 <!-- Verified from: docs/PRIVACY.md [Removing data] -->
+<!-- Verified from: platform/android/app/src/main/AndroidManifest.xml [android:allowBackup] -->
 <!-- Verified from: platform/ios/powershell-practice/AppDiagnostic.swift [AppDiagnostic] -->
 
 ## Troubleshooting
@@ -427,7 +503,8 @@ backups may keep earlier copies. The app has no user-visible log files.
 ### Does the app run PowerShell commands?
 
 No. The app does not run PowerShell commands or connect to a PowerShell
-server. Try the examples in PowerShell on a computer.
+server. The practice terminal shows recorded output for the examples and
+never runs what you type. Try the examples in PowerShell on a computer.
 
 <!-- Verified from: docs/PRIVACY.md [On your device] -->
 
