@@ -55,16 +55,16 @@ PowerShell server. It checks your quiz answers on the device.
 
 Install PowerShell Practice from
 [Google Play](https://play.google.com/store/apps/details?id=com.plaintxtoffice.powershellpractice).
-It is free and needs no account.
+It needs no account.
 
 <!-- Verified from: platform/android/app/build.gradle.kts [applicationId] -->
 
 ### Install on iOS
 
 Install PowerShell Practice on your iPhone or iPad from the
-[App Store](https://apps.apple.com/app/id6837567736). It is free and needs no
-account. The App Store has version 1.0.0; version 1.1.0, described in this
-manual, is waiting for App Review.
+[App Store](https://apps.apple.com/app/id6837567736). It needs no account.
+The App Store has version 1.0.0; version 1.1.0, described in this manual,
+is waiting for App Review.
 
 <!-- Verified from: platform/ios/powershell-practice.xcodeproj/project.pbxproj [PRODUCT_BUNDLE_IDENTIFIER, MARKETING_VERSION] -->
 

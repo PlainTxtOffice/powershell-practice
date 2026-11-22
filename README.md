@@ -5,7 +5,7 @@ last_updated: 2026-11-22
 <!-- Authoring guidance: dev-docs/specs/README_SPEC.instructions.md -->
 <!-- rumdl-disable MD033 MD041 -->
 <p align="center">
-  <img src="assets/icons/AppIcon.svg" alt="PowerShell Practice icon" width="96">
+  <img src="assets/icons/icon-github-readme.svg" alt="PowerShell Practice icon" width="96">
 </p>
 
 <h1 align="center">PowerShell Practice</h1>
@@ -33,7 +33,7 @@ common cmdlets, from getting help and working with files to the pipeline,
 processes, output, and networking, along with quizzes that check what you
 remember. Everything works on your device, with no account and no PowerShell
 connection needed. The app runs on Android phones and tablets and on iPhone
-and iPad, and is free on
+and iPad, and is available on
 [Google Play](https://play.google.com/store/apps/details?id=com.plaintxtoffice.powershellpractice)
 and the [App Store](https://apps.apple.com/app/id6837567736).
 
@@ -63,8 +63,8 @@ and the [App Store](https://apps.apple.com/app/id6837567736).
 
 | Platform | Download | Notes |
 | --- | --- | --- |
-| Android | [Google Play](https://play.google.com/store/apps/details?id=com.plaintxtoffice.powershellpractice) | Free. Version 1.1.0. Requires Android 8.0 or later. |
-| iOS | [App Store](https://apps.apple.com/app/id6837567736) | Free. Version 1.0.0; 1.1.0, with the guides and the practice terminal, is waiting for App Review. Requires iOS 26.5 or later on iPhone or iPad. |
+| Android | [Google Play](https://play.google.com/store/apps/details?id=com.plaintxtoffice.powershellpractice) | Version 1.1.0. Requires Android 8.0 or later. |
+| iOS | [App Store](https://apps.apple.com/app/id6837567736) | Version 1.0.0; 1.1.0, with the guides and the practice terminal, is waiting for App Review. Requires iOS 26.5 or later on iPhone or iPad. |
 
 ## User Manual
 
