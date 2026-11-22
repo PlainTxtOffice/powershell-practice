@@ -1,6 +1,6 @@
 ---
 last_updated: 2026-11-22
-version: 5.6.0
+version: 6.0.0
 product_versions:
   ios: "1.1.0"
   android: "1.1.0"
@@ -386,37 +386,6 @@ that the commands and aliases are for PowerShell 7 on Windows.
 
 <!-- Verified from: platform/ios/powershell-practice/PrivacyPolicyView.swift [PrivacyPolicyButton, PrivacyPolicyView, About] -->
 
-### Send Feedback
-
-Use **Send Feedback** to report a bug or ask for a feature.
-
-1. Tap the **Docs** tab, and in the **About** section tap **Send Feedback**.
-   On Android, you can also tap **More options** (three dots) on any tab and
-   then **Send feedback**. In iOS version 1.0.0, **Send Feedback** is on the
-   **Learn** tab's toolbar.
-1. On iPhone and iPad, tap **Report a bug** or **Request a feature** to open a
-   draft in your email app, or **Open contact form** to open the contact page
-   in your browser.
-1. On Android, choose **Bug report** or **Feature request**, describe it in
-   **Details**, and tap **Send by email**, or tap **Use the contact page
-   instead**.
-1. Review the draft and send it from your email app.
-
-The draft is addressed to `support@plaintxtoffice.com` and includes the app
-version, the iOS or Android version, and the device model. It never includes
-your learned cmdlets, quiz answers, or progress. Nothing is sent unless you
-send it.
-
-You can also email
-[support@plaintxtoffice.com](mailto:support@plaintxtoffice.com) directly, use
-the [contact page](https://plaintxtoffice.com/contact/), or open an issue in
-[GitHub Issues](https://github.com/PlainTxtOffice/powershell-practice/issues).
-
-<!-- Verified from: platform/ios/powershell-practice/Feedback.swift [Feedback, FeedbackView] -->
-<!-- Verified from: platform/android/app/src/main/kotlin/com/plaintxtoffice/powershellpractice/feature/feedback/FeedbackScreen.kt [FeedbackScreen] -->
-<!-- Verified from: platform/android/app/src/main/kotlin/com/plaintxtoffice/powershellpractice/feature/home/HomeScreen.kt [HomeMenu] -->
-<!-- Verified from: platform/android/app/src/main/kotlin/com/plaintxtoffice/powershellpractice/feature/docs/DocsScreen.kt [DocsScreen] -->
-
 ## Settings and Preferences
 
 Not Applicable.
@@ -463,9 +432,11 @@ open or edit these records by hand, and the app does not show their location.
 | Data | Where it is stored | Can you edit it? |
 | --- | --- | --- |
 | Cmdlet library | Included with the app | No |
-| Learned cmdlets and quiz answers for each cmdlet | App storage on your device; exact location Unknown. | No; change it through the app |
+| Learned cmdlets and quiz answers for each cmdlet | The app's private storage on your device: an on-device library on iPhone and iPad, and the `progress.db` database on Android | No; change it through the app |
 
 <!-- Verified from: platform/ios/powershell-practice/powershell_practiceApp.swift [StorageRecovery schema] -->
+<!-- Verified from: platform/ios/powershell-practice/StorageRecovery.swift [ModelContainer, isStoredInMemoryOnly: false] -->
+<!-- Verified from: platform/android/app/src/main/kotlin/com/plaintxtoffice/powershellpractice/di/AppModule.kt [Room.databaseBuilder "progress.db"] -->
 <!-- Verified from: platform/ios/powershell-practice/Models/CommandProgress.swift [CommandProgress] -->
 <!-- Verified from: docs/PRIVACY.md [On your device] -->
 
@@ -540,6 +511,46 @@ No. The app contains no analytics, advertising, or tracking code and has no
 accounts or sign-in.
 
 <!-- Verified from: docs/PRIVACY.md [Developer services] -->
+
+## Feedback
+
+To report a bug or request a feature, email
+[support@plaintxtoffice.com](mailto:support@plaintxtoffice.com), use the
+contact page at <https://plaintxtoffice.com/contact/>, or use the feedback
+screen in the app:
+
+| Platform | How to open feedback |
+| --- | --- |
+| iOS | Tap the **Docs** tab, then **Send Feedback** in the **About** section. In version 1.0.0, **Send Feedback** is on the **Learn** tab's toolbar. |
+| Android | Tap the **Docs** tab, then **Send feedback** in the **About** section, or tap **More options** (three dots) on any tab, then **Send feedback**. |
+
+<!-- Verified from: platform/ios/powershell-practice/Feedback.swift [Feedback, FeedbackView] -->
+<!-- Verified from: platform/android/app/src/main/kotlin/com/plaintxtoffice/powershellpractice/feature/home/HomeScreen.kt [HomeMenu] -->
+<!-- Verified from: platform/android/app/src/main/kotlin/com/plaintxtoffice/powershellpractice/feature/docs/DocsScreen.kt [DocsScreen] -->
+
+### Send Feedback from the App
+
+1. Tap the **Docs** tab, and in the **About** section tap **Send Feedback**
+   (**Send feedback** on Android). On Android, you can also tap **More
+   options** (three dots) on any tab and then **Send feedback**. In iOS
+   version 1.0.0, **Send Feedback** is on the **Learn** tab's toolbar.
+1. On iPhone and iPad, tap **Report a bug** or **Request a feature** to open a
+   draft in your email app, or **Open contact form** to open the contact page
+   in your browser.
+1. On Android, choose **Bug report** or **Feature request**, describe it in
+   **Details**, and tap **Send by email**, or tap **Use the contact page
+   instead**.
+1. Review the draft and send it from your email app.
+
+The draft is addressed to `support@plaintxtoffice.com` and includes the app
+version, the iOS or Android version, and the device model. It never includes
+your learned cmdlets, quiz answers, or progress. Nothing is sent unless you
+send it.
+
+<!-- Verified from: platform/ios/powershell-practice/Feedback.swift [Feedback, FeedbackView] -->
+<!-- Verified from: platform/android/app/src/main/kotlin/com/plaintxtoffice/powershellpractice/feature/feedback/FeedbackScreen.kt [FeedbackScreen] -->
+<!-- Verified from: platform/android/app/src/main/kotlin/com/plaintxtoffice/powershellpractice/feature/home/HomeScreen.kt [HomeMenu] -->
+<!-- Verified from: platform/android/app/src/main/kotlin/com/plaintxtoffice/powershellpractice/feature/docs/DocsScreen.kt [DocsScreen] -->
 
 ## Glossary
 
