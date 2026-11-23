@@ -1,5 +1,5 @@
 ---
-last_updated: 2026-11-22
+last_updated: 2026-11-23
 ---
 
 <!-- Authoring guidance: dev-docs/specs/README_SPEC.instructions.md -->
@@ -42,22 +42,31 @@ and the [App Store](https://apps.apple.com/app/id6837567736).
 - Browse common cmdlets in seven categories, or search by name, alias, or task.
 - Read each cmdlet's summary, syntax, aliases, examples, and tips, and copy
   any command to the clipboard.
-- Mark cmdlets as learned and see your progress overall and by category.
+- Mark cmdlets as learned; learned cmdlets show a check mark in the list.
 - Take multiple-choice or type-the-command quizzes of 5 to 30 questions on all
   cmdlets, ones you have not learned yet, ones that need review, or a single
   category.
 - See your score and the cmdlets you missed at the end of each quiz.
 - Practice pipelines: pick the pipeline that does a task, or build it by
   tapping cmdlets into order.
-- Track quiz accuracy, with a **Needs Review** list of the cmdlets you miss
-  most.
+- See each cmdlet's quiz record, and quiz yourself on the cmdlets that need
+  review.
 - Read five short guides in the **Docs** tab, on naming rules, command
   conventions, piping techniques, variables and quoting, and comparison
   operators, each with worked examples and their output.
-- Type examples into the **Practice Terminal** to see their recorded output.
-  Nothing you type is run.
+- Type examples into the emulator to see their recorded output. Nothing you
+  type is run.
 - Send a bug report or feature request from inside the app.
-- Reset all progress when you want to start over.
+
+The next version of each platform, in development, rearranges the app into
+four tabs: **Home**, **Practice**, **Emulator**, and **Docs**. **Docs** holds
+the cmdlet library under **Commands** and the guides under **Guides**,
+**Emulator** replaces the **Practice Terminal**, and **Home** adds a **Send
+Feedback** button. The **Progress** tab and its totals are not part of that
+layout; learned marks and quiz records carry over, and **Reset All Progress**
+moves to the **About** section under **Docs**, **Guides**. Pipeline rounds can
+have 1 to 14 questions, and the app remembers the number you choose. Version
+1.1.0 has the tabs **Learn**, **Practice**, **Progress**, and **Docs**.
 
 ## Download
 
@@ -80,7 +89,9 @@ Send bug reports and feature requests to
 In the app, **Send feedback** prepares an email to the same address. On
 Android, find it in **More options** (three dots) on any tab or under
 **About** in **Docs**. On iPhone and iPad, it is under **About** in **Docs**
-from version 1.1.0, and on the **Learn** tab's toolbar in version 1.0.0.
+from version 1.1.0, and on the **Learn** tab's toolbar in version 1.0.0. In
+the next version of each platform, in development, **Send Feedback** is on the
+**Home** tab and under **About** in **Docs**, **Guides**.
 
 ## License
 
