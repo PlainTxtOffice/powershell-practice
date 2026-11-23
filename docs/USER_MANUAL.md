@@ -114,10 +114,9 @@ bottom of the screen, and windows at least 600 dp wide show the tabs along the
 side instead.
 
 Each tab keeps the screens you open in it, such as a cmdlet page or a guide,
-while you use another tab, and the tab bar stays visible on those screens. On
-Android, it also stays visible during quizzes and pipeline rounds, and tapping
-the tab you are on returns it to its first screen. On iPhone and iPad, quizzes
-and pipeline rounds open full screen.
+while you use another tab, and the tab bar stays visible on those screens.
+Quizzes and pipeline rounds open full screen, without the tab bar. On Android,
+tapping the tab you are on returns it to its first screen.
 
 | Tab | What you find there |
 | --- | --- |
@@ -308,9 +307,8 @@ after it closes.
 
 ### Answer Quiz Questions
 
-The quiz shows the question number, such as **1 of 10**, and a progress bar.
-On iPhone and iPad, it opens full screen; on Android, the tab bar stays below
-it.
+The quiz opens full screen and shows the question number, such as
+**1 of 10**, and a progress bar.
 
 <!-- Verified from: platform/ios/powershell-practice/Views/QuizView.swift [toolbar, questionView] -->
 
