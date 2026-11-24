@@ -1,9 +1,9 @@
 ---
-last_updated: 2026-11-23
-version: 6.0.0
+last_updated: 2026-11-24
+version: 6.5.0
 product_versions:
-  ios: "1.1.0"
-  android: "1.1.0"
+  ios: "1.3.0"
+  android: "1.2.0"
 generated_from: "dev-docs/specs/USER_MANUAL_SPEC.instructions.md"
 ---
 
@@ -23,8 +23,8 @@ and type examples into an emulator to see their recorded output.
 | Item | Details |
 | --- | --- |
 | Platform | Android, on phones and tablets; iOS, on iPhone and iPad |
-| Interface | Touch interface with four tabs: **Home**, **Practice**, **Emulator**, and **Docs**. This layout is in development and arrives with the next version of each platform. Version 1.1.0 has the tabs **Learn**, **Practice**, **Progress**, and **Docs** |
-| Version | Android 1.1.0, iOS 1.1.0. The App Store has iOS 1.0.0; 1.1.0 is waiting for App Review |
+| Interface | Touch interface with four tabs: **Home**, **Practice**, **Emulator**, and **Docs**. This layout is in iOS version 1.2.0 and arrives on Android with version 1.2.0. Version 1.1.0 has the tabs **Learn**, **Practice**, **Progress**, and **Docs** |
+| Version | Android 1.2.0, iOS 1.3.0. Google Play has Android 1.1.0 until 1.2.0 is approved. The App Store has iOS 1.2.0; 1.3.0 is in development |
 
 <!-- Verified from: platform/ios/powershell-practice.xcodeproj/project.pbxproj [MARKETING_VERSION, TARGETED_DEVICE_FAMILY, INFOPLIST_KEY_CFBundleDisplayName] -->
 <!-- Verified from: platform/ios/powershell-practice/ContentView.swift [ContentView, AppTab] -->
@@ -32,12 +32,25 @@ and type examples into an emulator to see their recorded output.
 <!-- Verified from: platform/ios/powershell-practice/Models/CommandLibrary.swift [CommandLibrary.all] -->
 <!-- Verified from: platform/ios/powershell-practice/Models/Command.swift [CommandCategory] -->
 
-This manual describes the layout that is in development. If your installed
+This manual describes the four-tab layout of version 1.2.0. If your installed
 version shows a **Learn** tab, see
 [Find Your Way in Version 1.1.0 and Earlier](#find-your-way-in-version-110-and-earlier).
 
 PowerShell Practice does not run PowerShell commands or connect to a
 PowerShell server. It checks your quiz answers on the device.
+
+On iOS, a paid add-on named **Full Access** is planned for version 1.3.0. It is
+a one-time purchase, not a subscription, and it is not yet available. It adds an
+Advanced pack of 35 cmdlets in four more categories (**Scripting**,
+**Remoting & Jobs**, **System Administration**, and **Modules & Data**), 12 more
+pipeline questions, and five more guides, and it lets the emulator keep up to 30
+sandbox projects. Without Full Access, the app has the 38 cmdlets, 14 pipeline
+questions, and five guides described here, and in version 1.3.0 the emulator
+keeps one sandbox project.
+
+<!-- Verified from: platform/ios/powershell-practice/Models/AdvancedLibrary.swift [CommandLibrary.advanced, PipelineLibrary.advanced, GuideLibrary.advanced] -->
+<!-- Verified from: platform/ios/powershell-practice/Premium/FullAccess.swift [FullAccess] -->
+<!-- Verified from: platform/ios/powershell-practice/Sandbox/SandboxLibrary.swift [freeProjectLimit, projectLimit] -->
 
 <!-- Verified from: docs/PRIVACY.md [On your device] -->
 
@@ -68,7 +81,7 @@ It needs no account.
 
 Install PowerShell Practice on your iPhone or iPad from the
 [App Store](https://apps.apple.com/app/id6837567736). It needs no account.
-The App Store has version 1.0.0; version 1.1.0 is waiting for App Review.
+The App Store has version 1.2.0.
 
 <!-- Verified from: platform/ios/powershell-practice.xcodeproj/project.pbxproj [PRODUCT_BUNDLE_IDENTIFIER, MARKETING_VERSION] -->
 
@@ -188,7 +201,7 @@ and no practice terminal.
 | See learned counts and quiz accuracy | Tap the **Progress** tab. It shows your learned count, quiz accuracy, progress by category, and a **Needs Review** list. |
 | Clear learned cmdlets and quiz history | Tap the **Progress** tab, then **Reset All Progress**, then **Reset**. This cannot be undone. |
 
-The layout that is in development has no **Progress** tab. Your learned marks
+Version 1.2.0 has no **Progress** tab. Your learned marks
 and each cmdlet's quiz record carry over to it, and **Reset All Progress** is
 in the **About** section under **Docs**, **Guides**. See
 [Reset All Progress](#reset-all-progress).
@@ -213,6 +226,11 @@ in the **About** section under **Docs**, **Guides**. See
 A check mark next to a cmdlet means you marked it as learned. If nothing
 matches your search, the app shows a no-results message. To clear the search,
 tap **Clear search** (the X) in the field.
+
+In the planned iOS version 1.3.0, the cmdlets of the Advanced pack are listed
+after the others with a lock. Tapping a locked cmdlet opens the **Full Access**
+screen, where you can buy Full Access or tap **Restore Purchases**. With Full
+Access they open like any other cmdlet.
 
 <!-- Verified from: platform/ios/powershell-practice/Views/DocsView.swift [CommandSearchField, CommandSections.results(in:), CommandRow] -->
 <!-- Verified from: platform/android/app/src/main/kotlin/com/plaintxtoffice/powershellpractice/feature/docs/DocsScreen.kt [SearchField, CommandListItem, NoResults] -->
@@ -423,6 +441,77 @@ use other tabs, until the app closes.
 <!-- Verified from: platform/android/app/src/main/kotlin/com/plaintxtoffice/powershellpractice/feature/terminal/EmulatorScreen.kt [EmulatorScreen, EmulatorTools, InputRow] -->
 <!-- Verified from: platform/android/app/src/main/kotlin/com/plaintxtoffice/powershellpractice/domain/PracticeTerminal.kt [PracticeTerminal.reply] -->
 
+### Use Sandbox Projects
+
+iOS version 1.2.0 adds sandbox projects to the emulator. A sandbox
+project is a virtual computer: commands you run in it create, change, and remove
+its folders and files, and the project is saved on your device, so it is the
+same when you open the app again. Nothing runs on your device itself. Android
+version 1.2.0 adds them too. There, the menu is the name under **Emulator**,
+which reads **Examples** until you choose a project: tap it wherever these steps
+say to tap **Projects**. **Try an Example** shows only in **Examples**.
+
+In the planned iOS version 1.3.0, the app keeps one sandbox project without Full
+Access and up to 30 with it. Projects you already have stay usable either way.
+To create another without Full Access, first delete the projects you have.
+
+To create a project:
+
+1. Tap the **Emulator** tab, then **Projects** (the drive) at the top.
+1. Tap **New Project**.
+1. Type a name, or leave the suggested one.
+1. Choose **Standard Windows** for a `C:` drive laid out like Windows, where
+   you are the user `Student` and start in `C:\Users\Student`. Choose
+   **Custom** to pick the user name, computer name, drive letters, home
+   folder, starting folder, extra folders, and starter files; a field left
+   empty uses the default it shows.
+1. Tap **Create**. The emulator switches to the new project.
+
+In a project, the prompt shows the current folder, such as
+`PS C:\Users\Student>`, and the project's name appears under **Emulator**.
+These cmdlets and their aliases work: `Get-Location`, `Set-Location`,
+`Get-ChildItem`, `New-Item`, `mkdir`, `Remove-Item`, `Copy-Item`, `Move-Item`,
+`Rename-Item`, `Test-Path`, `Get-Content`, `Set-Content`, `Add-Content`, and
+`Clear-Host`. For example:
+
+```powershell
+New-Item -Path C:\Projects -ItemType Directory
+Set-Location C:\Projects
+Set-Content -Path test.txt -Value "Hello World"
+Get-Content test.txt
+```
+
+The last command prints `Hello World`, read from the file the project now
+holds. You can also use wildcards such as `*.txt`, `-WhatIf`, several commands
+on one line separated by `;`, and environment variables: `$env:USERNAME`
+reads one, `$env:NAME = "value"` sets one, and `Get-ChildItem Env:` lists
+them. When `Remove-Item` would remove a folder that still has items, it asks
+first; type `Y` or `N` and tap **Run**. Pipelines, redirection, variables
+other than `$env:`, and other cmdlets are not simulated in projects; the
+emulator says so instead of making up output.
+
+On iOS, tap **Hide Keyboard** above the keyboard to put it away, or drag the
+output down.
+
+To switch, tap **Projects** and choose a project, or **Examples** to go back
+to the recorded examples. To rename, reset, or delete a project, tap
+**Projects**, then **Manage Projects**, then the **…** button beside it.
+**Reset** puts the project back the way it was when you created it. Each
+project is separate: nothing you do in one changes another. A project keeps
+its files, folders, current folder, and environment variables; what is on the
+screen is cleared when the app closes.
+
+<!-- Verified from: platform/ios/powershell-practice/Views/EmulatorView.swift [projectMenu, inputRow, SandboxEntryView] -->
+<!-- Verified from: platform/ios/powershell-practice/Views/NewSandboxProjectView.swift [NewSandboxProjectView] -->
+<!-- Verified from: platform/ios/powershell-practice/Views/SandboxProjectsView.swift [SandboxProjectsView] -->
+<!-- Verified from: platform/ios/powershell-practice/Sandbox/PowerShell/PowerShellFileCmdlets.swift [PowerShellSandbox.cmdlets] -->
+<!-- Verified from: platform/ios/powershell-practice/Sandbox/SandboxLibrary.swift [SandboxLibrary] -->
+<!-- Verified from: platform/android/app/src/main/kotlin/com/plaintxtoffice/powershellpractice/feature/terminal/EmulatorScreen.kt [ProjectMenu, EmulatorTools, SandboxEntry, InputRow] -->
+<!-- Verified from: platform/android/app/src/main/kotlin/com/plaintxtoffice/powershellpractice/feature/terminal/NewSandboxProjectScreen.kt [NewSandboxProjectScreen, NewProjectForm] -->
+<!-- Verified from: platform/android/app/src/main/kotlin/com/plaintxtoffice/powershellpractice/feature/terminal/SandboxProjectsScreen.kt [SandboxProjectsScreen] -->
+<!-- Verified from: platform/android/app/src/main/kotlin/com/plaintxtoffice/powershellpractice/domain/sandbox/powershell/PowerShellFileCmdlets.kt [fileCmdlets] -->
+<!-- Verified from: platform/android/app/src/main/kotlin/com/plaintxtoffice/powershellpractice/data/SandboxLibrary.kt [SandboxLibrary] -->
+
 ### Read the Guides
 
 1. Tap the **Docs** tab, then **Guides**.
@@ -434,6 +523,12 @@ Operators**. **Naming Rules** covers the Verb-Noun pattern, approved verbs,
 singular nouns, capitalization, parameter names and aliases, and how to name
 your own functions. Each guide has worked examples with their output. Tap
 **Copy** beside a command to paste it into the emulator.
+
+In the planned iOS version 1.3.0, an **Advanced** group lists five more guides:
+**Handling Errors**, **Functions and Parameters**, **Loops and Conditions**,
+**Splatting and Custom Objects**, and **PowerShell Profiles**. They show a lock
+until Full Access is unlocked. **Full Access**, in the **About** group below
+them, opens the screen for buying it or restoring a purchase.
 
 <!-- Verified from: platform/ios/powershell-practice/Models/GuideLibrary.swift [GuideLibrary.all] -->
 <!-- Verified from: platform/ios/powershell-practice/Views/DocsView.swift [GuideSections, GuideView] -->
@@ -548,10 +643,12 @@ open or edit these records by hand, and the app does not show their location.
 | Cmdlet library | Included with the app | No |
 | Learned cmdlets and quiz answers for each cmdlet | The app's private storage on your device: an on-device library on iPhone and iPad, and the `progress.db` database on Android | No; change it through the app |
 | Pipeline question count | The app's settings, in its private storage on your device | No; change it on the **Practice** tab |
+| Sandbox projects (from version 1.2.0) | The app's private storage on your device, one file for each project | No; change them in the **Emulator** |
 
 <!-- Verified from: platform/ios/powershell-practice/powershell_practiceApp.swift [StorageRecovery schema] -->
 <!-- Verified from: platform/ios/powershell-practice/StorageRecovery.swift [ModelContainer, isStoredInMemoryOnly: false] -->
 <!-- Verified from: platform/android/app/src/main/kotlin/com/plaintxtoffice/powershellpractice/di/AppModule.kt [Room.databaseBuilder "progress.db"] -->
+<!-- Verified from: platform/android/app/src/main/kotlin/com/plaintxtoffice/powershellpractice/data/SandboxProjectStore.kt [SandboxFileStore] -->
 <!-- Verified from: platform/ios/powershell-practice/Models/CommandProgress.swift [CommandProgress] -->
 <!-- Verified from: docs/PRIVACY.md [On your device] -->
 
@@ -579,7 +676,7 @@ has no user-visible log files.
 | **Couldn't update progress** appears. | The learned status could not be saved. | Tap **OK** and try again. Your progress was not changed. |
 | **Couldn't save your answer** appears during a quiz. | The answer could not be recorded. | Tap **OK** and continue. That question's result was not recorded. |
 | The emulator says a command is outside the cmdlet library. | The emulator only knows the cmdlets in the app and their examples. | Look up a cmdlet in **Docs** and type one of its examples, or tap **Try an Example**. |
-| There is no **Progress** tab. | The layout that is in development does not have one. | See a cmdlet's **Quiz record** on its detail screen, and its learned mark in **Docs**. To clear your records, use **Reset All Progress** under **Docs**, **Guides**, **About**. |
+| There is no **Progress** tab. | Version 1.2.0 does not have one. | See a cmdlet's **Quiz record** on its detail screen, and its learned mark in **Docs**. To clear your records, use **Reset All Progress** under **Docs**, **Guides**, **About**. |
 | **Reset All Progress** is unavailable. | There are no learned marks or quiz records to clear. | Nothing needs resetting. |
 | **Couldn't reset progress** appears. | The records could not be cleared. | Tap **OK** and try again. Your progress was not changed. |
 
@@ -608,6 +705,10 @@ No. The cmdlet library is included with the app, and answers are checked on
 the device. Only the contact links, such as **Contact Plain Text Office** and
 **Open contact form**, open a website, and sending feedback opens your email
 app.
+
+In the planned iOS version 1.3.0, buying Full Access or restoring a purchase
+needs a connection to the App Store. Once unlocked, Full Access works without a
+connection.
 
 <!-- Verified from: docs/PRIVACY.md [On your device] -->
 <!-- Verified from: platform/ios/powershell-practice/PrivacyPolicyView.swift [Link] -->
@@ -639,10 +740,9 @@ accounts or sign-in.
 ## Feedback
 
 To report a bug or request a feature, email
-[support@plaintxtoffice.com](mailto:support@plaintxtoffice.com), use the
+[feedback@plaintxtoffice.com](mailto:feedback@plaintxtoffice.com), use the
 contact page at <https://plaintxtoffice.com/contact/>, or use the feedback
-screen in the app. The **Home** button is part of the layout that is in
-development.
+screen in the app. The **Home** button is in version 1.2.0 and later.
 
 | Platform | How to open feedback |
 | --- | --- |
@@ -667,10 +767,11 @@ development.
    instead**.
 1. Review the draft and send it from your email app.
 
-The draft is addressed to `support@plaintxtoffice.com` and includes the app
+The draft is addressed to `feedback@plaintxtoffice.com`, or to
+`support@plaintxtoffice.com` in version 1.2.0 and earlier, and includes the app
 version, the iOS or Android version, and the device model. It never includes
-your learned cmdlets, quiz answers, or progress. Nothing is sent unless you
-send it.
+your learned cmdlets, quiz answers, or progress. Nothing is sent unless you send
+it.
 
 <!-- Verified from: platform/ios/powershell-practice/Feedback.swift [Feedback, FeedbackView] -->
 <!-- Verified from: platform/android/app/src/main/kotlin/com/plaintxtoffice/powershellpractice/feature/feedback/FeedbackScreen.kt [FeedbackScreen] -->

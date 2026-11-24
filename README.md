@@ -1,5 +1,5 @@
 ---
-last_updated: 2026-11-23
+last_updated: 2026-11-24
 ---
 
 <!-- Authoring guidance: dev-docs/specs/README_SPEC.instructions.md -->
@@ -51,29 +51,33 @@ and the [App Store](https://apps.apple.com/app/id6837567736).
   tapping cmdlets into order.
 - See each cmdlet's quiz record, and quiz yourself on the cmdlets that need
   review.
+- Create sandbox projects in the emulator: virtual Windows computers where file
+  commands such as `New-Item`, `Set-Content`, and `Remove-Item` create, change,
+  and remove folders and files. Projects are saved on your device.
 - Read five short guides in the **Docs** tab, on naming rules, command
   conventions, piping techniques, variables and quoting, and comparison
   operators, each with worked examples and their output.
 - Type examples into the emulator to see their recorded output. Nothing you
-  type is run.
+  type runs on your device.
 - Send a bug report or feature request from inside the app.
 
-The next version of each platform, in development, rearranges the app into
-four tabs: **Home**, **Practice**, **Emulator**, and **Docs**. **Docs** holds
-the cmdlet library under **Commands** and the guides under **Guides**,
-**Emulator** replaces the **Practice Terminal**, and **Home** adds a **Send
-Feedback** button. The **Progress** tab and its totals are not part of that
-layout; learned marks and quiz records carry over, and **Reset All Progress**
-moves to the **About** section under **Docs**, **Guides**. Pipeline rounds can
-have 1 to 14 questions, and the app remembers the number you choose. Version
-1.1.0 has the tabs **Learn**, **Practice**, **Progress**, and **Docs**.
+Version 1.2.0 arranges the app into four tabs: **Home**, **Practice**,
+**Emulator**, and **Docs**. **Docs** holds the cmdlet library under **Commands**
+and the guides under **Guides**, **Emulator** replaces the **Practice Terminal**
+and adds sandbox projects, and **Home** adds a **Send Feedback** button. The
+**Progress** tab and its totals are not part of that layout; learned marks and
+quiz records carry over, and **Reset All Progress** moves to the **About**
+section under **Docs**, **Guides**. Pipeline rounds can have 1 to 14 questions,
+and the app remembers the number you choose. Version 1.2.0 is on the App Store
+and is being released on Google Play. Version 1.1.0 has the tabs **Learn**,
+**Practice**, **Progress**, and **Docs**.
 
 ## Download
 
 | Platform | Download | Notes |
 | --- | --- | --- |
-| Android | [Google Play](https://play.google.com/store/apps/details?id=com.plaintxtoffice.powershellpractice) | Version 1.1.0. Requires Android 8.0 or later. |
-| iOS | [App Store](https://apps.apple.com/app/id6837567736) | Version 1.0.0; 1.1.0, with the guides and the practice terminal, is waiting for App Review. Requires iOS 26.5 or later on iPhone or iPad. |
+| Android | [Google Play](https://play.google.com/store/apps/details?id=com.plaintxtoffice.powershellpractice) | Version 1.2.0, with the four-tab layout and sandbox projects, is being released; Google Play has 1.1.0 until it is approved. Requires Android 8.0 or later. |
+| iOS | [App Store](https://apps.apple.com/app/id6837567736) | Version 1.2.0, with the four-tab layout and sandbox projects. Requires iOS 26.5 or later on iPhone or iPad. |
 
 ## User Manual
 
@@ -83,15 +87,15 @@ troubleshooting.
 ## Feedback
 
 Send bug reports and feature requests to
-[support@plaintxtoffice.com](mailto:support@plaintxtoffice.com), through the
+[feedback@plaintxtoffice.com](mailto:feedback@plaintxtoffice.com), through the
 [contact page](https://plaintxtoffice.com/contact/), or in
 [GitHub Issues](https://github.com/PlainTxtOffice/powershell-practice/issues).
-In the app, **Send feedback** prepares an email to the same address. On
-Android, find it in **More options** (three dots) on any tab or under
-**About** in **Docs**. On iPhone and iPad, it is under **About** in **Docs**
-from version 1.1.0, and on the **Learn** tab's toolbar in version 1.0.0. In
-the next version of each platform, in development, **Send Feedback** is on the
-**Home** tab and under **About** in **Docs**, **Guides**.
+In the app, **Send Feedback** prepares an email for you to send; version 1.2.0
+and earlier address it to `support@plaintxtoffice.com`. In version 1.2.0, find
+it on the **Home** tab and under **About** in **Docs**, **Guides**. In version
+1.1.0, it is under **About** in **Docs**, and on Android also in
+**More options** (three dots) on any tab. In iOS version 1.0.0, it is on the
+**Learn** tab's toolbar.
 
 ## License
 
