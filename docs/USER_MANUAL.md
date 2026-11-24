@@ -1,6 +1,6 @@
 ---
 last_updated: 2026-11-24
-version: 6.5.0
+version: 6.5.1
 product_versions:
   ios: "1.3.0"
   android: "1.2.0"
@@ -23,8 +23,8 @@ and type examples into an emulator to see their recorded output.
 | Item | Details |
 | --- | --- |
 | Platform | Android, on phones and tablets; iOS, on iPhone and iPad |
-| Interface | Touch interface with four tabs: **Home**, **Practice**, **Emulator**, and **Docs**. This layout is in iOS version 1.2.0 and arrives on Android with version 1.2.0. Version 1.1.0 has the tabs **Learn**, **Practice**, **Progress**, and **Docs** |
-| Version | Android 1.2.0, iOS 1.3.0. Google Play has Android 1.1.0 until 1.2.0 is approved. The App Store has iOS 1.2.0; 1.3.0 is in development |
+| Interface | Touch interface with four tabs: **Home**, **Practice**, **Emulator**, and **Docs**. This layout is in version 1.2.0 on both platforms. Version 1.1.0 has the tabs **Learn**, **Practice**, **Progress**, and **Docs** |
+| Version | Android 1.2.0, iOS 1.3.0. Google Play has Android 1.2.0. The App Store has iOS 1.2.0; 1.3.0 is in development |
 
 <!-- Verified from: platform/ios/powershell-practice.xcodeproj/project.pbxproj [MARKETING_VERSION, TARGETED_DEVICE_FAMILY, INFOPLIST_KEY_CFBundleDisplayName] -->
 <!-- Verified from: platform/ios/powershell-practice/ContentView.swift [ContentView, AppTab] -->

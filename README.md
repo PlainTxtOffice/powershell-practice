@@ -69,14 +69,14 @@ and adds sandbox projects, and **Home** adds a **Send Feedback** button. The
 quiz records carry over, and **Reset All Progress** moves to the **About**
 section under **Docs**, **Guides**. Pipeline rounds can have 1 to 14 questions,
 and the app remembers the number you choose. Version 1.2.0 is on the App Store
-and is being released on Google Play. Version 1.1.0 has the tabs **Learn**,
+and Google Play. Version 1.1.0 has the tabs **Learn**,
 **Practice**, **Progress**, and **Docs**.
 
 ## Download
 
 | Platform | Download | Notes |
 | --- | --- | --- |
-| Android | [Google Play](https://play.google.com/store/apps/details?id=com.plaintxtoffice.powershellpractice) | Version 1.2.0, with the four-tab layout and sandbox projects, is being released; Google Play has 1.1.0 until it is approved. Requires Android 8.0 or later. |
+| Android | [Google Play](https://play.google.com/store/apps/details?id=com.plaintxtoffice.powershellpractice) | Version 1.2.0, with the four-tab layout and sandbox projects. Requires Android 8.0 or later. |
 | iOS | [App Store](https://apps.apple.com/app/id6837567736) | Version 1.2.0, with the four-tab layout and sandbox projects. Requires iOS 26.5 or later on iPhone or iPad. |
 
 ## User Manual
